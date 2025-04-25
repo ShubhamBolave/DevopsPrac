@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/ShubhamBolave/DevopsPrac.git'
+                git url: 'https://github.com/ShubhamBolave/DevopsPrac.git', credentialsId: 'f2e2ecab-4f19-43c5-b93f-b7c7be2d0a5c'
             }
         }
 
