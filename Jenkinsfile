@@ -4,15 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from GitHub
-                git url: 'https://github.com/ShubhamBolave/DevopsPrac.git', credentialsId: 'f2e2ecab-4f19-43c5-b93f-b7c7be2d0a5c'
+                git url: 'https://github.com/ShubhamBolave/DevopsPrac.git', branch: 'main', credentialsId: 'your-credentials-id'
             }
         }
 
         stage('Build') {
             steps {
                 script {
-                    // Compile Java code
                     sh 'javac PrimeNumber.java'
                 }
             }
@@ -21,7 +19,6 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    // Run the Java application
                     sh 'java PrimeNumber'
                 }
             }
@@ -30,8 +27,7 @@ pipeline {
 
     post {
         always {
-            // Clean up workspace
-            cleanWs()
+            cleanWs() // Will work after plugin is installed
         }
     }
 }
