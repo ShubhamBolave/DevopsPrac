@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/yourusername/PrimeNumberApp.git'
+                git 'https://github.com/ShubhamBolave/DevopsPrac.git'
             }
         }
 
